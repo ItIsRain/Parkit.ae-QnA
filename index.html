@@ -177,6 +177,48 @@
       color: var(--primary-hover) !important;
       text-decoration: underline !important;
     }
+
+    /* Add text direction styles */
+    .content-en {
+      direction: ltr;
+    }
+
+    .content-ar {
+      direction: rtl;
+    }
+
+    /* Ensure FAQ items maintain their structure */
+    .faq-question {
+      text-align: inherit; /* Will follow parent's direction */
+    }
+
+    .faq-answer {
+      text-align: inherit; /* Will follow parent's direction */
+    }
+
+    /* Keep lists aligned properly */
+    .content-ar .faq-answer ul,
+    .content-ar .faq-answer ol {
+      padding-right: 20px;
+      padding-left: 0;
+    }
+
+    .content-en .faq-answer ul,
+    .content-en .faq-answer ol {
+      padding-left: 20px;
+      padding-right: 0;
+    }
+
+    /* Keep the arrow indicator on the correct side */
+    .content-ar .faq-question::after {
+      margin-right: auto;
+      margin-left: 0;
+    }
+
+    .content-en .faq-question::after {
+      margin-left: auto;
+      margin-right: 0;
+    }
   </style>
 </head>
 
