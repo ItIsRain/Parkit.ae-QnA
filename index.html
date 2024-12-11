@@ -13,6 +13,56 @@
   <!-- Default Theme (see https://docsify.js.org/#/themes) -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 
+  <style>
+    .language-switcher {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+      padding: 5px;
+    }
+    [lang="ar"] .language-switcher {
+      left: 10px;
+      right: auto;
+    }
+
+    /* New scroll/overflow styles */
+    body {
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
+    .markdown-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px 15px;
+    }
+
+    .content {
+      padding-top: 60px;
+      overflow-y: auto;
+      height: 100vh;
+    }
+
+    [lang="ar"] .content {
+      direction: rtl;
+    }
+
+    .sidebar {
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    @media screen and (max-width: 768px) {
+      .markdown-section {
+        padding: 20px 15px;
+      }
+      
+      .content {
+        padding-top: 50px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -22,22 +72,233 @@
     // Docsify Configuration (see https://docsify.js.org/#/configuration)
     window.$docsify = {
       name: 'Simple Docsify Template',
-
-      // Sidebar Configuration
       auto2top: true,
       loadSidebar: true,
-      maxLevel: 0,
-      // Set subMaxLevel to 0 to remove automatic display of page table of contents (TOC) in Sidebar
-      subMaxLevel: 3,
-
-      // Search Plugin Configuration
+      maxLevel: 3,
+      subMaxLevel: 2,
+      topMargin: 90, // Adjust scroll-to-top margin
+      // Add fallback route
+      fallbackLanguages: ['ar'],
+      // Add name for both languages
+      nameLink: {
+        '/ar/': '#/ar/',
+        '/': '#/'
+      },
       search: {
-        placeholder: 'Type to search',
-        noData: 'No matches found.',
-        // Headline depth, 1 - 6
-        depth: 2,
-      }
+        placeholder: {
+          '/ar/': 'اكتب للبحث',
+          '/': 'Type to search'
+        },
+        noData: {
+          '/ar/': 'لا يوجد نتائج',
+          '/': 'No matches found'
+        },
+        depth: 2
+      },
+      plugins: [
+        function(hook) {
+          const languages = ['en', 'ar'];
+          const currentLang = localStorage.getItem('language') || 'en';
+          
+          hook.beforeEach(function(content) {
+            // Add language switcher
+            const html = `
+              <select class="language-switcher" onchange="switchLanguage(this.value)">
+                <option value="en" ${currentLang === 'en' ? 'selected' : ''}>English</option>
+                <option value="ar" ${currentLang === 'ar' ? 'selected' : ''}>عربي</option>
+              </select>
+            `;
+            document.querySelector('body').insertAdjacentHTML('afterbegin', html);
+            return content;
+          });
+
+          hook.doneEach(function() {
+            // Restore scroll position
+            if (sessionStorage.scrollPosition) {
+              document.documentElement.scrollTop = sessionStorage.scrollPosition;
+              sessionStorage.removeItem('scrollPosition');
+            }
+          });
+
+          // Save scroll position before page change
+          hook.beforeEach(function() {
+            sessionStorage.scrollPosition = document.documentElement.scrollTop;
+          });
+        }
+      ]
     };
+
+    // Update language switcher function
+    function switchLanguage(lang) {
+      localStorage.setItem('language', lang);
+      const currentPath = window.location.hash.split('?')[0];
+      if (lang === 'ar') {
+        document.documentElement.lang = 'ar';
+        document.documentElement.dir = 'rtl';
+        window.location.hash = currentPath.startsWith('#/ar/') ? currentPath : currentPath.replace('#/', '#/ar/');
+      } else {
+        document.documentElement.lang = 'en';
+        document.documentElement.dir = 'ltr';
+        window.location.hash = currentPath.replace('#/ar/', '#/');
+      }
+      window.location.reload();
+    }
+  </script>
+
+  <!-- Required -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+
+  <!-- Recommended -->
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+
+</body>
+</html>
+
+<html lang="ar">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
+
+  <!-- Replace with your own title and description. -->
+  <title>Awesome Docsify Site</title>
+  <meta name="description" content="An awesome docsify site for publishing some content on the web.">
+
+  <!-- Default Theme (see https://docsify.js.org/#/themes) -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
+
+  <style>
+    .language-switcher {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+      padding: 5px;
+    }
+    [lang="ar"] .language-switcher {
+      left: 10px;
+      right: auto;
+    }
+
+    /* New scroll/overflow styles */
+    body {
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
+    .markdown-section {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 30px 15px;
+    }
+
+    .content {
+      padding-top: 60px;
+      overflow-y: auto;
+      height: 100vh;
+    }
+
+    [lang="ar"] .content {
+      direction: rtl;
+    }
+
+    .sidebar {
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    @media screen and (max-width: 768px) {
+      .markdown-section {
+        padding: 20px 15px;
+      }
+      
+      .content {
+        padding-top: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app"></div>
+
+  <script>
+    // Docsify Configuration (see https://docsify.js.org/#/configuration)
+    window.$docsify = {
+      name: 'Simple Docsify Template',
+      auto2top: true,
+      loadSidebar: true,
+      maxLevel: 3,
+      subMaxLevel: 2,
+      topMargin: 90, // Adjust scroll-to-top margin
+      // Add fallback route
+      fallbackLanguages: ['ar'],
+      // Add name for both languages
+      nameLink: {
+        '/ar/': '#/ar/',
+        '/': '#/'
+      },
+      search: {
+        placeholder: {
+          '/ar/': 'اكتب للبحث',
+          '/': 'Type to search'
+        },
+        noData: {
+          '/ar/': 'لا يوجد نتائج',
+          '/': 'No matches found'
+        },
+        depth: 2
+      },
+      plugins: [
+        function(hook) {
+          const languages = ['en', 'ar'];
+          const currentLang = localStorage.getItem('language') || 'en';
+          
+          hook.beforeEach(function(content) {
+            // Add language switcher
+            const html = `
+              <select class="language-switcher" onchange="switchLanguage(this.value)">
+                <option value="en" ${currentLang === 'en' ? 'selected' : ''}>English</option>
+                <option value="ar" ${currentLang === 'ar' ? 'selected' : ''}>عربي</option>
+              </select>
+            `;
+            document.querySelector('body').insertAdjacentHTML('afterbegin', html);
+            return content;
+          });
+
+          hook.doneEach(function() {
+            // Restore scroll position
+            if (sessionStorage.scrollPosition) {
+              document.documentElement.scrollTop = sessionStorage.scrollPosition;
+              sessionStorage.removeItem('scrollPosition');
+            }
+          });
+
+          // Save scroll position before page change
+          hook.beforeEach(function() {
+            sessionStorage.scrollPosition = document.documentElement.scrollTop;
+          });
+        }
+      ]
+    };
+
+    // Update language switcher function
+    function switchLanguage(lang) {
+      localStorage.setItem('language', lang);
+      const currentPath = window.location.hash.split('?')[0];
+      if (lang === 'ar') {
+        document.documentElement.lang = 'ar';
+        document.documentElement.dir = 'rtl';
+        window.location.hash = currentPath.startsWith('#/ar/') ? currentPath : currentPath.replace('#/', '#/ar/');
+      } else {
+        document.documentElement.lang = 'en';
+        document.documentElement.dir = 'ltr';
+        window.location.hash = currentPath.replace('#/ar/', '#/');
+      }
+      window.location.reload();
+    }
   </script>
 
   <!-- Required -->
