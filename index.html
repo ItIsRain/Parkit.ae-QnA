@@ -14,6 +14,129 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 
   <style>
+    /* Custom Colors */
+    :root {
+      --primary: #116162;
+      --primary-hover: #1e7b7b;
+      --primary-light: #a2d8d8;
+      --primary-lighter: #e8f3f3;
+      --background: #f8fafa;
+    }
+
+    /* Apply colors to existing elements */
+    body {
+      background-color: var(--background);
+    }
+
+    .sidebar {
+      background-color: white;
+      border-right: 1px solid var(--primary-light);
+    }
+
+    .sidebar > h1 a {
+      color: var(--primary);
+    }
+
+    .sidebar ul li a {
+      color: var(--primary-hover);
+    }
+
+    .sidebar ul li.active > a {
+      color: var(--primary);
+      border-right: 2px solid var(--primary);
+    }
+
+    .markdown-section h1,
+    .markdown-section h2,
+    .markdown-section h3,
+    .markdown-section h4,
+    .markdown-section h5,
+    .markdown-section h6 {
+      color: var(--primary);
+    }
+
+    .markdown-section p {
+      color: var(--primary-hover);
+    }
+
+    .markdown-section code {
+      background-color: var(--primary-lighter);
+      color: var(--primary);
+    }
+
+    .markdown-section pre {
+      background-color: var(--primary-lighter);
+    }
+
+    .markdown-section blockquote {
+      border-left: 4px solid var(--primary-light);
+      color: var(--primary-hover);
+    }
+
+    /* Language switcher styling */
+    .language-switcher {
+      background-color: white;
+      border: 1px solid var(--primary-light);
+      color: var(--primary);
+    }
+
+    .language-switcher:hover {
+      border-color: var(--primary);
+    }
+
+    /* Content container */
+    .content {
+      background-color: var(--background);
+    }
+
+    /* Search styling */
+    .search input {
+      border: 1px solid var(--primary-light);
+    }
+
+    .search input:focus {
+      border: 1px solid var(--primary);
+    }
+
+    .search .search-keyword {
+      color: var(--primary);
+    }
+
+    /* Links */
+    .markdown-section a {
+      color: var(--primary);
+    }
+
+    .markdown-section a:hover {
+      color: var(--primary-hover);
+    }
+
+    /* Lists */
+    .markdown-section ul {
+      color: var(--primary-hover);
+    }
+
+    /* Tables */
+    .markdown-section table {
+      border: 1px solid var(--primary-light);
+    }
+
+    .markdown-section tr:nth-child(2n) {
+      background-color: var(--primary-lighter);
+    }
+
+    .markdown-section th {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    /* Add smooth transitions */
+    .sidebar ul li a,
+    .markdown-section a,
+    .language-switcher {
+      transition: all 0.2s ease;
+    }
+
     .language-switcher {
       position: fixed;
       top: 10px;
@@ -170,6 +293,129 @@
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 
   <style>
+    /* Custom Colors */
+    :root {
+      --primary: #116162;
+      --primary-hover: #1e7b7b;
+      --primary-light: #a2d8d8;
+      --primary-lighter: #e8f3f3;
+      --background: #f8fafa;
+    }
+
+    /* Apply colors to existing elements */
+    body {
+      background-color: var(--background);
+    }
+
+    .sidebar {
+      background-color: white;
+      border-right: 1px solid var(--primary-light);
+    }
+
+    .sidebar > h1 a {
+      color: var(--primary);
+    }
+
+    .sidebar ul li a {
+      color: var(--primary-hover);
+    }
+
+    .sidebar ul li.active > a {
+      color: var(--primary);
+      border-right: 2px solid var(--primary);
+    }
+
+    .markdown-section h1,
+    .markdown-section h2,
+    .markdown-section h3,
+    .markdown-section h4,
+    .markdown-section h5,
+    .markdown-section h6 {
+      color: var(--primary);
+    }
+
+    .markdown-section p {
+      color: var(--primary-hover);
+    }
+
+    .markdown-section code {
+      background-color: var(--primary-lighter);
+      color: var(--primary);
+    }
+
+    .markdown-section pre {
+      background-color: var(--primary-lighter);
+    }
+
+    .markdown-section blockquote {
+      border-left: 4px solid var(--primary-light);
+      color: var(--primary-hover);
+    }
+
+    /* Language switcher styling */
+    .language-switcher {
+      background-color: white;
+      border: 1px solid var(--primary-light);
+      color: var(--primary);
+    }
+
+    .language-switcher:hover {
+      border-color: var(--primary);
+    }
+
+    /* Content container */
+    .content {
+      background-color: var(--background);
+    }
+
+    /* Search styling */
+    .search input {
+      border: 1px solid var(--primary-light);
+    }
+
+    .search input:focus {
+      border: 1px solid var(--primary);
+    }
+
+    .search .search-keyword {
+      color: var(--primary);
+    }
+
+    /* Links */
+    .markdown-section a {
+      color: var(--primary);
+    }
+
+    .markdown-section a:hover {
+      color: var(--primary-hover);
+    }
+
+    /* Lists */
+    .markdown-section ul {
+      color: var(--primary-hover);
+    }
+
+    /* Tables */
+    .markdown-section table {
+      border: 1px solid var(--primary-light);
+    }
+
+    .markdown-section tr:nth-child(2n) {
+      background-color: var(--primary-lighter);
+    }
+
+    .markdown-section th {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    /* Add smooth transitions */
+    .sidebar ul li a,
+    .markdown-section a,
+    .language-switcher {
+      transition: all 0.2s ease;
+    }
+
     .language-switcher {
       position: fixed;
       top: 10px;

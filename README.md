@@ -1,48 +1,178 @@
 # SmartPark FAQ 🅿️
 
-Welcome to the Abu Dhabi SmartPark FAQ page. Here you'll find answers to commonly asked questions about our AI-powered parking solution.
+<div class="faq-container">
 
-## Frequently Asked Questions
+# Frequently Asked Questions
 
-### What is Abu Dhabi SmartPark?
-Abu Dhabi SmartPark is an AI-powered parking solution that revolutionizes urban parking in Abu Dhabi. The system helps drivers find parking spaces quickly and efficiently, reducing search times from 15-20 minutes to under 60 seconds.
+<div class="faq-item">
+  <button class="faq-question">How do I book a parking spot?</button>
+  <div class="faq-answer">
+    <p>You can book a parking spot through our web interface or mobile app. Simply select your desired location, choose your parking duration, and complete the payment process. The system will confirm your booking via SMS.</p>
+  </div>
+</div>
 
-### How does the real-time parking availability system work?
-The system uses advanced sensors and AI technology to track parking space occupancy in real-time. Users can view available parking spots through an interactive map interface, which is integrated with ArcGIS for accurate location services.
+<div class="faq-item">
+  <button class="faq-question">How can I extend my booking?</button>
+  <div class="faq-answer">
+    <p>To extend your current booking:</p>
+    <ol>
+      <li>Log into your account</li>
+      <li>Navigate to "Active Bookings"</li>
+      <li>Select the booking you want to extend</li>
+      <li>Click "Extend Booking" and follow the prompts</li>
+    </ol>
+  </div>
+</div>
 
-### What are the peak hours and how does pricing work?
-Peak hours are from 6:00 AM to 9:00 AM and 6:00 PM to 9:00 PM. The system implements dynamic pricing, which means rates may vary based on demand and parking type. This helps manage parking space availability more effectively during high-demand periods.
+<div class="faq-item">
+  <button class="faq-question">What payment methods are accepted?</button>
+  <div class="faq-answer">
+    <p>We accept various payment methods including:</p>
+    <ul>
+      <li>Credit/Debit cards</li>
+      <li>Digital wallets</li>
+      <li>Direct bank transfers</li>
+      <li>Prepaid parking cards</li>
+    </ul>
+  </div>
+</div>
 
-### Can I book a parking spot in advance?
-Yes, the smart booking system allows you to reserve parking spots in advance. You'll receive confirmation through SMS, and the system includes secure payment integration for a seamless experience.
+<div class="faq-item">
+  <button class="faq-question">What is your refund policy?</button>
+  <div class="faq-answer">
+    <p>Refunds are processed automatically for cancellations made at least 1 hour before the booking start time. Late cancellations or no-shows are not eligible for refunds.</p>
+  </div>
+</div>
 
-### How many people are currently using the system?
-The system currently serves 10,000 daily users and has contributed to a 150% increase in revenue for Abu Dhabi's Government while saving approximately 3,500 hours per day in collective parking search time.
+<div class="faq-item">
+  <button class="faq-question">How do I update my vehicle information?</button>
+  <div class="faq-answer">
+    <p>To update your vehicle information:</p>
+    <ol>
+      <li>Go to "Account Settings"</li>
+      <li>Select "Vehicle Management"</li>
+      <li>Choose "Edit" or "Add New Vehicle"</li>
+      <li>Enter the required information</li>
+      <li>Save your changes</li>
+    </ol>
+  </div>
+</div>
 
-### What are the future plans for SmartPark?
-Future enhancements include:
-- Mobile applications for iOS
-- Advanced vehicle recognition systems
-- AI-powered predictive analytics for parking availability
-- Additional payment options
-- Expansion of coverage across Abu Dhabi using open data
+<div class="faq-item">
+  <button class="faq-question">How can I view my parking history?</button>
+  <div class="faq-answer">
+    <p>Your parking history is available in your account dashboard:</p>
+    <ol>
+      <li>Log into your account</li>
+      <li>Navigate to "Parking History"</li>
+      <li>View all past bookings and transactions</li>
+    </ol>
+  </div>
+</div>
 
-### How secure is the payment system?
-Our payment system is fully secured and integrated with trusted payment providers. All transactions are encrypted and processed through secure channels to ensure your financial information remains safe.
+<div class="faq-item">
+  <button class="faq-question">How do I cancel a booking?</button>
+  <div class="faq-answer">
+    <p>You can cancel your booking up to 1 hour before the scheduled start time. To cancel:</p>
+    <ol>
+      <li>Go to "My Bookings"</li>
+      <li>Select the booking you wish to cancel</li>
+      <li>Click "Cancel Booking"</li>
+      <li>Follow the refund instructions if applicable</li>
+    </ol>
+  </div>
+</div>
 
-### What should I do if I need assistance?
-If you need help, you can:
-1. Contact our 24/7 customer support
-2. Use the help section in our web interface
-3. Send us an email at support@smartpark.ae
+</div>
 
-## Key Statistics
+<style>
+  .faq-container {
+    background-color: white;
+    border: 1px solid var(--primary-light);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
 
-- **Time Savings**: 3,500 hours saved daily
-- **Parking Speed**: 60 seconds average to find and secure a spot
-- **Revenue Impact**: 150% increase in government parking revenue
-- **User Base**: 10,000+ daily active users
+  .faq-item {
+    border: 1px solid var(--primary-light);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+  }
+
+  .faq-question {
+    background-color: white;
+    color: var(--primary);
+    font-weight: 500;
+    width: 100%;
+    text-align: left;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .faq-question:hover {
+    background-color: var(--primary-lighter);
+  }
+
+  .faq-question::after {
+    content: '▼';
+    font-size: 0.8em;
+    transition: transform 0.2s ease;
+  }
+
+  .faq-item.active .faq-question::after {
+    transform: rotate(180deg);
+  }
+
+  .faq-answer {
+    display: none;
+    padding: 15px;
+    border-top: 1px solid var(--primary-light);
+    background-color: white;
+    color: var(--primary-hover);
+  }
+
+  .faq-item.active .faq-answer {
+    display: block;
+  }
+
+  .faq-answer ul, .faq-answer ol {
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+
+  .faq-answer li {
+    margin-bottom: 5px;
+  }
+</style>
+
+<script>
+  document.querySelectorAll('.faq-question').forEach(button => {
+    button.addEventListener('click', () => {
+      const faqItem = button.parentElement;
+      const wasActive = faqItem.classList.contains('active');
+      
+      // Close all FAQ items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // If the clicked item wasn't active, open it
+      if (!wasActive) {
+        faqItem.classList.add('active');
+      }
+    });
+  });
+</script>
 
 ---
 
 For more information, visit [parkit-ae.vercel.app](https://parkit-ae.vercel.app/)
+
