@@ -1,5 +1,5 @@
 <div class="logo-container">
-  <img src="SmartParkLogoWritingNew.svg" alt="SmartPark Logo">
+  <img src="Parkit-ae-full-logo.svg" alt="Parkit.ae Logo">
 </div>
 
 <!-- English Content -->
