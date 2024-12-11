@@ -6,61 +6,218 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
 
-  <!-- Replace with your own title and description. -->
-  <title>Awesome Docsify Site</title>
-  <meta name="description" content="An awesome docsify site for publishing some content on the web.">
+  <title>SmartPark FAQ</title>
+  <meta name="description" content="SmartPark FAQ - Find answers to commonly asked questions about Abu Dhabi's AI-powered parking solution.">
 
-  <!-- Default Theme (see https://docsify.js.org/#/themes) -->
+  <!-- Default Theme -->
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
 
   <style>
-    .language-switcher {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      z-index: 1000;
-      padding: 5px;
-    }
-    [lang="ar"] .language-switcher {
-      left: 10px;
-      right: auto;
+    :root {
+      --primary: #116162;
+      --primary-hover: #1e7b7b;
+      --primary-light: #a2d8d8;
+      --primary-lighter: #e8f3f3;
+      --background: #f8fafa;
     }
 
-    /* New scroll/overflow styles */
-    body {
-      overflow-y: auto;
-      scroll-behavior: smooth;
+    /* Hide sidebar */
+    .sidebar {
+      display: none !important;
     }
 
-    .markdown-section {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 30px 15px;
-    }
-
+    /* Adjust main content */
     .content {
-      padding-top: 60px;
-      overflow-y: auto;
-      height: 100vh;
+      left: 0 !important;
+      padding-top: 20px !important;
+      max-width: 1000px !important;
+      margin: 0 auto !important;
+      padding: 20px !important;
     }
 
-    [lang="ar"] .content {
+    /* Updated FAQ Container styles */
+    .faq-container {
+      margin-top: 140px;
+      background-color: white;
+      border: 1px solid var(--primary-light);
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 60px;
+      max-width: 800px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .faq-item {
+      border: 1px solid var(--primary-light);
+      border-radius: 10px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .faq-question {
+      background-color: white;
+      color: var(--primary);
+      font-weight: 500;
+      width: 100%;
+      text-align: left;
+      padding: 25px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 18px;
+    }
+
+    .faq-question:hover {
+      background-color: var(--primary-lighter);
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 25px;
+      border-top: 1px solid var(--primary-light);
+      background-color: white;
+      color: var(--primary-hover);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      color: var(--primary-hover);
+    }
+
+    .faq-answer ul {
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    .faq-answer li {
+      margin-bottom: 8px;
+      color: var(--primary-hover);
+    }
+
+    .faq-item.active .faq-answer {
+      display: block;
+    }
+
+    /* New Language Toggle Button styles */
+    .language-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1000;
+      background-color: white;
+      border: 1px solid var(--primary-light);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-weight: 500;
+      color: var(--primary);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-size: 14px;
+    }
+
+    .language-toggle:hover {
+      background-color: var(--primary-lighter);
+      border-color: var(--primary);
+    }
+
+    /* Updated Logo styles */
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin: 20px auto 40px;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+
+    .logo-container img {
+      width: 300px;
+      height: auto;
+      pointer-events: none;
+    }
+
+    /* Adjust content padding to account for logo */
+    .content {
+      padding-top: 0 !important;
+    }
+
+    /* Remove anchor styles */
+    .content a {
+      text-decoration: none !important;
+      color: var(--primary) !important;
+      cursor: default;
+    }
+
+    .content h1 {
+      color: var(--primary) !important;
+      cursor: default;
+      pointer-events: none;
+    }
+
+    /* Bottom link styles */
+    .bottom-link {
+      text-align: center;
+      color: var(--primary-hover);
+      margin-top: -20px;
+      margin-bottom: 40px;
+    }
+
+    .bottom-link a {
+      color: var(--primary) !important;
+      text-decoration: none !important;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .bottom-link a:hover {
+      color: var(--primary-hover) !important;
+      text-decoration: underline !important;
+    }
+
+    /* Add text direction styles */
+    .content-en {
+      direction: ltr;
+    }
+
+    .content-ar {
       direction: rtl;
     }
 
-    .sidebar {
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
+    /* Ensure FAQ items maintain their structure */
+    .faq-question {
+      text-align: inherit; /* Will follow parent's direction */
     }
 
-    @media screen and (max-width: 768px) {
-      .markdown-section {
-        padding: 20px 15px;
-      }
-      
-      .content {
-        padding-top: 50px;
-      }
+    .faq-answer {
+      text-align: inherit; /* Will follow parent's direction */
+    }
+
+    /* Keep lists aligned properly */
+    .content-ar .faq-answer ul,
+    .content-ar .faq-answer ol {
+      padding-right: 20px;
+      padding-left: 0;
+    }
+
+    .content-en .faq-answer ul,
+    .content-en .faq-answer ol {
+      padding-left: 20px;
+      padding-right: 0;
+    }
+
+    /* Keep the arrow indicator on the correct side */
+    .content-ar .faq-question::after {
+      margin-right: auto;
+      margin-left: 0;
+    }
+
+    .content-en .faq-question::after {
+      margin-left: auto;
+      margin-right: 0;
     }
   </style>
 </head>
@@ -69,244 +226,102 @@
   <div id="app"></div>
 
   <script>
-    // Docsify Configuration (see https://docsify.js.org/#/configuration)
     window.$docsify = {
-      name: 'Simple Docsify Template',
+      el: '#app',
+      name: 'SmartPark FAQ',
+      repo: '',
+      loadSidebar: false,
+      homepage: 'README.md',
       auto2top: true,
-      loadSidebar: true,
       maxLevel: 3,
       subMaxLevel: 2,
-      topMargin: 90, // Adjust scroll-to-top margin
-      // Add fallback route
-      fallbackLanguages: ['ar'],
-      // Add name for both languages
-      nameLink: {
-        '/ar/': '#/ar/',
-        '/': '#/'
-      },
-      search: {
-        placeholder: {
-          '/ar/': 'اكتب للبحث',
-          '/': 'Type to search'
-        },
-        noData: {
-          '/ar/': 'لا يوجد نتائج',
-          '/': 'No matches found'
-        },
-        depth: 2
-      },
       plugins: [
         function(hook) {
-          const languages = ['en', 'ar'];
-          const currentLang = localStorage.getItem('language') || 'en';
-          
           hook.beforeEach(function(content) {
-            // Add language switcher
-            const html = `
-              <select class="language-switcher" onchange="switchLanguage(this.value)">
-                <option value="en" ${currentLang === 'en' ? 'selected' : ''}>English</option>
-                <option value="ar" ${currentLang === 'ar' ? 'selected' : ''}>عربي</option>
-              </select>
+            // Remove any existing language toggle button
+            const existingButton = document.querySelector('.language-toggle');
+            if (existingButton) {
+              existingButton.remove();
+            }
+
+            const currentLang = localStorage.getItem('language') || 'en';
+            const buttonText = currentLang === 'en' ? 'عربي' : 'English';
+            const languageToggle = `
+              <button 
+                class="language-toggle" 
+                onclick="switchLanguage('${currentLang === 'en' ? 'ar' : 'en'}')"
+              >
+                ${buttonText}
+              </button>
             `;
-            document.querySelector('body').insertAdjacentHTML('afterbegin', html);
+            
+            document.querySelector('body').insertAdjacentHTML('afterbegin', languageToggle);
             return content;
           });
 
           hook.doneEach(function() {
-            // Restore scroll position
-            if (sessionStorage.scrollPosition) {
-              document.documentElement.scrollTop = sessionStorage.scrollPosition;
-              sessionStorage.removeItem('scrollPosition');
-            }
-          });
-
-          // Save scroll position before page change
-          hook.beforeEach(function() {
-            sessionStorage.scrollPosition = document.documentElement.scrollTop;
+            initializeFAQ();
+            updateLanguageDisplay();
           });
         }
       ]
     };
 
-    // Update language switcher function
-    function switchLanguage(lang) {
-      localStorage.setItem('language', lang);
-      const currentPath = window.location.hash.split('?')[0];
-      if (lang === 'ar') {
-        document.documentElement.lang = 'ar';
-        document.documentElement.dir = 'rtl';
-        window.location.hash = currentPath.startsWith('#/ar/') ? currentPath : currentPath.replace('#/', '#/ar/');
-      } else {
-        document.documentElement.lang = 'en';
-        document.documentElement.dir = 'ltr';
-        window.location.hash = currentPath.replace('#/ar/', '#/');
-      }
-      window.location.reload();
-    }
-  </script>
-
-  <!-- Required -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-
-  <!-- Recommended -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
-
-</body>
-</html>
-
-<html lang="ar">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport"
-    content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
-
-  <!-- Replace with your own title and description. -->
-  <title>Awesome Docsify Site</title>
-  <meta name="description" content="An awesome docsify site for publishing some content on the web.">
-
-  <!-- Default Theme (see https://docsify.js.org/#/themes) -->
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
-
-  <style>
-    .language-switcher {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      z-index: 1000;
-      padding: 5px;
-    }
-    [lang="ar"] .language-switcher {
-      left: 10px;
-      right: auto;
+    function initializeFAQ() {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(question => {
+        question.removeEventListener('click', handleFAQClick);
+        question.addEventListener('click', handleFAQClick);
+      });
     }
 
-    /* New scroll/overflow styles */
-    body {
-      overflow-y: auto;
-      scroll-behavior: smooth;
-    }
-
-    .markdown-section {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 30px 15px;
-    }
-
-    .content {
-      padding-top: 60px;
-      overflow-y: auto;
-      height: 100vh;
-    }
-
-    [lang="ar"] .content {
-      direction: rtl;
-    }
-
-    .sidebar {
-      overflow-y: auto;
-      -webkit-overflow-scrolling: touch;
-    }
-
-    @media screen and (max-width: 768px) {
-      .markdown-section {
-        padding: 20px 15px;
-      }
+    function handleFAQClick(event) {
+      const faqItem = event.currentTarget.parentElement;
+      const wasActive = faqItem.classList.contains('active');
       
-      .content {
-        padding-top: 50px;
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      if (!wasActive) {
+        faqItem.classList.add('active');
       }
     }
-  </style>
-</head>
 
-<body>
-  <div id="app"></div>
+    function updateLanguageDisplay() {
+      const currentLang = localStorage.getItem('language') || 'en';
+      document.documentElement.lang = currentLang;
+      
+      // Hide all language content
+      document.querySelectorAll('.content-en, .content-ar').forEach(el => {
+        el.style.display = 'none';
+      });
+      
+      // Show current language content
+      const contentToShow = document.querySelector(`.content-${currentLang}`);
+      if (contentToShow) {
+        contentToShow.style.display = 'block';
+      }
+    }
 
-  <script>
-    // Docsify Configuration (see https://docsify.js.org/#/configuration)
-    window.$docsify = {
-      name: 'Simple Docsify Template',
-      auto2top: true,
-      loadSidebar: true,
-      maxLevel: 3,
-      subMaxLevel: 2,
-      topMargin: 90, // Adjust scroll-to-top margin
-      // Add fallback route
-      fallbackLanguages: ['ar'],
-      // Add name for both languages
-      nameLink: {
-        '/ar/': '#/ar/',
-        '/': '#/'
-      },
-      search: {
-        placeholder: {
-          '/ar/': 'اكتب للبحث',
-          '/': 'Type to search'
-        },
-        noData: {
-          '/ar/': 'لا يوجد نتائج',
-          '/': 'No matches found'
-        },
-        depth: 2
-      },
-      plugins: [
-        function(hook) {
-          const languages = ['en', 'ar'];
-          const currentLang = localStorage.getItem('language') || 'en';
-          
-          hook.beforeEach(function(content) {
-            // Add language switcher
-            const html = `
-              <select class="language-switcher" onchange="switchLanguage(this.value)">
-                <option value="en" ${currentLang === 'en' ? 'selected' : ''}>English</option>
-                <option value="ar" ${currentLang === 'ar' ? 'selected' : ''}>عربي</option>
-              </select>
-            `;
-            document.querySelector('body').insertAdjacentHTML('afterbegin', html);
-            return content;
-          });
-
-          hook.doneEach(function() {
-            // Restore scroll position
-            if (sessionStorage.scrollPosition) {
-              document.documentElement.scrollTop = sessionStorage.scrollPosition;
-              sessionStorage.removeItem('scrollPosition');
-            }
-          });
-
-          // Save scroll position before page change
-          hook.beforeEach(function() {
-            sessionStorage.scrollPosition = document.documentElement.scrollTop;
-          });
-        }
-      ]
-    };
-
-    // Update language switcher function
     function switchLanguage(lang) {
       localStorage.setItem('language', lang);
-      const currentPath = window.location.hash.split('?')[0];
-      if (lang === 'ar') {
-        document.documentElement.lang = 'ar';
-        document.documentElement.dir = 'rtl';
-        window.location.hash = currentPath.startsWith('#/ar/') ? currentPath : currentPath.replace('#/', '#/ar/');
-      } else {
-        document.documentElement.lang = 'en';
-        document.documentElement.dir = 'ltr';
-        window.location.hash = currentPath.replace('#/ar/', '#/');
+      updateLanguageDisplay();
+      
+      // Update button text and onclick after switching
+      const langButton = document.querySelector('.language-toggle');
+      if (langButton) {
+        langButton.textContent = lang === 'en' ? 'عربي' : 'English';
+        langButton.onclick = () => switchLanguage(lang === 'en' ? 'ar' : 'en');
       }
-      window.location.reload();
     }
   </script>
 
   <!-- Required -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
 
   <!-- Recommended -->
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
 
 </body>
 </html>

@@ -1,2 +1,0 @@
-- [الرئيسية](ar/README.md)
-- [الصفحة الثانية](ar/second-page.md)
