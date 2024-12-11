@@ -147,5 +147,3 @@
 </div>
 
 </div>
-
-<script src="script.js"></script>
