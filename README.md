@@ -5,80 +5,69 @@
 # Frequently Asked Questions
 
 <div class="faq-item">
-  <button class="faq-question">How do I book a parking spot?</button>
+  <button class="faq-question">What is Abu Dhabi SmartPark?</button>
   <div class="faq-answer">
-    <p>You can book a parking spot through our web interface or mobile app. Simply select your desired location, choose your parking duration, and complete the payment process. The system will confirm your booking via SMS.</p>
+    <p>Abu Dhabi SmartPark is an AI-powered parking solution that revolutionizes urban parking in Abu Dhabi. The system helps drivers find parking spaces quickly and efficiently, reducing search times from 15-20 minutes to under 60 seconds.</p>
   </div>
 </div>
 
 <div class="faq-item">
-  <button class="faq-question">How can I extend my booking?</button>
+  <button class="faq-question">How does the real-time parking availability system work?</button>
   <div class="faq-answer">
-    <p>To extend your current booking:</p>
-    <ol>
-      <li>Log into your account</li>
-      <li>Navigate to "Active Bookings"</li>
-      <li>Select the booking you want to extend</li>
-      <li>Click "Extend Booking" and follow the prompts</li>
-    </ol>
+    <p>The system uses advanced sensors and AI technology to track parking space occupancy in real-time. Users can view available parking spots through an interactive map interface, which is integrated with ArcGIS for accurate location services.</p>
   </div>
 </div>
 
 <div class="faq-item">
-  <button class="faq-question">What payment methods are accepted?</button>
+  <button class="faq-question">What are the peak hours and how does pricing work?</button>
   <div class="faq-answer">
-    <p>We accept various payment methods including:</p>
+    <p>Peak hours are from 6:00 AM to 9:00 AM and 6:00 PM to 9:00 PM. The system implements dynamic pricing, which means rates may vary based on demand and parking type. This helps manage parking space availability more effectively during high-demand periods.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">Can I book a parking spot in advance?</button>
+  <div class="faq-answer">
+    <p>Yes, the smart booking system allows you to reserve parking spots in advance. You'll receive confirmation through SMS, and the system includes secure payment integration for a seamless experience.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">How many people are currently using the system?</button>
+  <div class="faq-answer">
+    <p>The system currently serves 10,000 daily users and has contributed to a 150% increase in revenue for Abu Dhabi's Government while saving approximately 3,500 hours per day in collective parking search time.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">What are the future plans for SmartPark?</button>
+  <div class="faq-answer">
+    <p>Future enhancements include:</p>
     <ul>
-      <li>Credit/Debit cards</li>
-      <li>Digital wallets</li>
-      <li>Direct bank transfers</li>
-      <li>Prepaid parking cards</li>
+      <li>Mobile applications for iOS</li>
+      <li>Advanced vehicle recognition systems</li>
+      <li>AI-powered predictive analytics for parking availability</li>
+      <li>Additional payment options</li>
+      <li>Expansion of coverage across Abu Dhabi using open data</li>
     </ul>
   </div>
 </div>
 
 <div class="faq-item">
-  <button class="faq-question">What is your refund policy?</button>
+  <button class="faq-question">How secure is the payment system?</button>
   <div class="faq-answer">
-    <p>Refunds are processed automatically for cancellations made at least 1 hour before the booking start time. Late cancellations or no-shows are not eligible for refunds.</p>
+    <p>Our payment system is fully secured and integrated with trusted payment providers. All transactions are encrypted and processed through secure channels to ensure your financial information remains safe.</p>
   </div>
 </div>
 
 <div class="faq-item">
-  <button class="faq-question">How do I update my vehicle information?</button>
+  <button class="faq-question">What should I do if I need assistance?</button>
   <div class="faq-answer">
-    <p>To update your vehicle information:</p>
+    <p>If you need help, you can:</p>
     <ol>
-      <li>Go to "Account Settings"</li>
-      <li>Select "Vehicle Management"</li>
-      <li>Choose "Edit" or "Add New Vehicle"</li>
-      <li>Enter the required information</li>
-      <li>Save your changes</li>
-    </ol>
-  </div>
-</div>
-
-<div class="faq-item">
-  <button class="faq-question">How can I view my parking history?</button>
-  <div class="faq-answer">
-    <p>Your parking history is available in your account dashboard:</p>
-    <ol>
-      <li>Log into your account</li>
-      <li>Navigate to "Parking History"</li>
-      <li>View all past bookings and transactions</li>
-    </ol>
-  </div>
-</div>
-
-<div class="faq-item">
-  <button class="faq-question">How do I cancel a booking?</button>
-  <div class="faq-answer">
-    <p>You can cancel your booking up to 1 hour before the scheduled start time. To cancel:</p>
-    <ol>
-      <li>Go to "My Bookings"</li>
-      <li>Select the booking you wish to cancel</li>
-      <li>Click "Cancel Booking"</li>
-      <li>Follow the refund instructions if applicable</li>
+      <li>Contact our 24/7 customer support</li>
+      <li>Use the help section in our web interface</li>
+      <li>Send us an email at support@smartpark.ae</li>
     </ol>
   </div>
 </div>

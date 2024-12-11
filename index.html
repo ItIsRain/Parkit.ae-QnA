@@ -241,6 +241,9 @@
               document.documentElement.scrollTop = sessionStorage.scrollPosition;
               sessionStorage.removeItem('scrollPosition');
             }
+
+            // Initialize FAQ functionality after each page load
+            initializeFAQ();
           });
 
           // Save scroll position before page change
@@ -265,6 +268,34 @@
         window.location.hash = currentPath.replace('#/ar/', '#/');
       }
       window.location.reload();
+    }
+
+    // Separate function to initialize FAQ
+    function initializeFAQ() {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      
+      faqQuestions.forEach(question => {
+        // Remove any existing event listeners
+        question.removeEventListener('click', handleFAQClick);
+        // Add new click event listener
+        question.addEventListener('click', handleFAQClick);
+      });
+    }
+
+    // Handler function for FAQ clicks
+    function handleFAQClick(event) {
+      const faqItem = event.currentTarget.parentElement;
+      const wasActive = faqItem.classList.contains('active');
+      
+      // Close all FAQ items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // If the clicked item wasn't active, open it
+      if (!wasActive) {
+        faqItem.classList.add('active');
+      }
     }
   </script>
 
@@ -520,6 +551,9 @@
               document.documentElement.scrollTop = sessionStorage.scrollPosition;
               sessionStorage.removeItem('scrollPosition');
             }
+
+            // Initialize FAQ functionality after each page load
+            initializeFAQ();
           });
 
           // Save scroll position before page change
@@ -544,6 +578,34 @@
         window.location.hash = currentPath.replace('#/ar/', '#/');
       }
       window.location.reload();
+    }
+
+    // Separate function to initialize FAQ
+    function initializeFAQ() {
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      
+      faqQuestions.forEach(question => {
+        // Remove any existing event listeners
+        question.removeEventListener('click', handleFAQClick);
+        // Add new click event listener
+        question.addEventListener('click', handleFAQClick);
+      });
+    }
+
+    // Handler function for FAQ clicks
+    function handleFAQClick(event) {
+      const faqItem = event.currentTarget.parentElement;
+      const wasActive = faqItem.classList.contains('active');
+      
+      // Close all FAQ items
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      // If the clicked item wasn't active, open it
+      if (!wasActive) {
+        faqItem.classList.add('active');
+      }
     }
   </script>
 
