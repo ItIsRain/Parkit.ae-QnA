@@ -63,6 +63,18 @@
 </div>
 
 <div class="faq-item">
+  <button class="faq-question">Can Parkit.ae be implemented in specific areas only?</button>
+  <div class="faq-answer">
+    <p>Yes, Parkit.ae can be customized to operate in specific areas rather than the entire city. Since the system relies on a dataset to identify parking locations, it can be easily configured to include or exclude particular zones. This flexibility allows for:</p>
+    <ul>
+      <li>Targeted implementation in high-demand areas</li>
+      <li>Phased rollout starting with specific districts</li>
+      <li>Custom solutions for different types of areas (residential, commercial, mixed-use)</li>
+    </ul>
+  </div>
+</div>
+
+<div class="faq-item">
   <button class="faq-question">What steps are necessary to bring Parkit.ae to market?</button>
   <div class="faq-answer">
     <p>To bring Parkit.ae to market, we will begin with a pilot test in the Department of Government Enablement (DGE) parking area. DGE employees will use the system to provide valuable feedback. Based on this data, we will refine the system and make necessary adjustments. Once successful, Parkit.ae will be scaled for wider implementation across Abu Dhabi and beyond.</p>
@@ -105,7 +117,7 @@
   <button class="faq-question">ما هي التحديات التي قد يواجهها Parkit.ae خلال التنفيذ؟</button>
   <div class="faq-answer">
     <ol>
-      <li>تبني الحكومة: يعتمد نهج البنية التحتية الصفرية بشكل كبير على تبني حكومة الإمارات لـ Parkit.ae كبرنامج إدارة المواقف الرئيسي.</li>
+      <li>تبني الحكومة: يعتمد نهج البنية التح��ية الصفرية بشكل كبير على تبني حكومة الإمارات لـ Parkit.ae كبرنامج إدارة المواقف الرئيسي.</li>
       <li>تحديد مواقف السيارات: للحصول على حل فعال بدون بنية تحتية، يجب ترقيم مواقف السيارات لتمكين التحديد والحجز السلس.</li>
       <li>تكامل النظام: قد يتضمن التعاون مع الكيانات القائمة مثل مواقف تحديات تقنية والحاجة إلى تطوير تكاملات مخصصة.</li>
       <li>تصريح الكاميرات: يتطلب استخدام كاميرات الشوارع الحالية لاكتشاف المواقف تصريحاً مناسباً من السلطات المعنية للوصول إلى تغذية الكاميرات واستخدامها.</li>
@@ -127,9 +139,21 @@
   <div class="faq-answer">
     <p>تم تصميم Parkit.ae مع مراعاة قابلية التوسع، مما يتيح له التكيف مع المتطلبات المتغيرة والنمو:</p>
     <ul>
-      <li>تصميم معياري: النظام مرن للغاية ويمكن تعديله بسهولة لتلبية الاحتياجات المحددة للمناطق المختلفة، مما يضمن قابلية التوسع السلس.</li>
+      <li>تصميم معياري: النظام مرن للغاية ويمكن تع��يله بسهولة لتلبية الاحتياجات المحددة للمناطق المختلفة، مما يضمن قابلية التوسع السلس.</li>
       <li>نموذج بدون بنية تحتية: مع الحد الأدنى من التنفيذ المادي، يظل Parkit.ae فعالاً من حيث التكلفة وقابلاً للتكيف عبر البيئات الحضرية المختلفة.</li>
       <li>تكامل مرن للأجهزة: يمكن دمج المكونات الاختيارية مثل الكاميرات أو أجهزة استشعار إنترنت الأشياء وتوسيعها في المناطق ذات الطلب المرتفع حسب الحاجة، مما يتيح للنظام النمو بكفاءة.</li>
+    </ul>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">هل يمكن تطبيق Parkit.ae في مناطق محددة فقط؟</button>
+  <div class="faq-answer">
+    <p>نعم، يمكن تخصيص Parkit.ae للعمل في مناطق محددة بدلاً من المدينة بأكملها. نظراً لأن النظام يعتمد على مجموعة بيانات لتحديد مواقع وقوف السيارات، يمكن تكوينه بسهولة ليشمل أو يستثني مناطق معينة. تتيح هذه المرونة:</p>
+    <ul>
+      <li>التنفيذ المستهدف في المناطق ذات الطلب المرتفع</li>
+      <li>التنفيذ المرحلي بدءاً من مناطق محددة</li>
+      <li>حلول مخصصة لمختلف أنواع المناطق (سكنية، تجارية، متعددة الاستخدامات)</li>
     </ul>
   </div>
 </div>
