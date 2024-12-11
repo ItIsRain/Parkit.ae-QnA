@@ -30,24 +30,27 @@
     .content {
       left: 0 !important;
       padding-top: 20px !important;
-      max-width: 800px !important;
+      max-width: 1000px !important;
       margin: 0 auto !important;
+      padding: 20px !important;
     }
 
-    /* FAQ Container styles */
+    /* Updated FAQ Container styles */
     .faq-container {
+      margin-top: 140px;
       background-color: white;
       border: 1px solid var(--primary-light);
-      border-radius: 8px;
-      padding: 20px;
-      margin-top: 20px;
+      border-radius: 12px;
+      padding: 40px;
+      margin-bottom: 60px;
+      max-width: 800px;
       box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     }
 
     .faq-item {
       border: 1px solid var(--primary-light);
-      border-radius: 8px;
-      margin-bottom: 10px;
+      border-radius: 10px;
+      margin-bottom: 20px;
       overflow: hidden;
     }
 
@@ -57,13 +60,14 @@
       font-weight: 500;
       width: 100%;
       text-align: left;
-      padding: 15px;
+      padding: 25px;
       border: none;
       cursor: pointer;
       transition: all 0.2s ease;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      font-size: 18px;
     }
 
     .faq-question:hover {
@@ -72,9 +76,26 @@
 
     .faq-answer {
       display: none;
-      padding: 15px;
+      padding: 25px;
       border-top: 1px solid var(--primary-light);
       background-color: white;
+      color: var(--primary-hover);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .faq-answer p {
+      margin: 0;
+      color: var(--primary-hover);
+    }
+
+    .faq-answer ul {
+      margin: 10px 0 0 20px;
+      padding: 0;
+    }
+
+    .faq-answer li {
+      margin-bottom: 8px;
       color: var(--primary-hover);
     }
 
@@ -82,35 +103,26 @@
       display: block;
     }
 
-    /* Language switcher */
-    .language-switcher {
+    /* New Language Toggle Button styles */
+    .language-toggle {
       position: fixed;
-      top: 10px;
-      right: 10px;
+      top: 20px;
+      right: 20px;
       z-index: 1000;
-      padding: 8px 12px;
-      border-radius: 8px;
       background-color: white;
       border: 1px solid var(--primary-light);
-      color: var(--primary);
+      border-radius: 8px;
+      padding: 8px 16px;
       font-weight: 500;
+      color: var(--primary);
       cursor: pointer;
       transition: all 0.2s ease;
+      font-size: 14px;
     }
 
-    .language-switcher:hover {
-      border-color: var(--primary);
+    .language-toggle:hover {
       background-color: var(--primary-lighter);
-    }
-
-    /* RTL Support */
-    [dir="rtl"] .language-switcher {
-      left: 10px;
-      right: auto;
-    }
-
-    [dir="rtl"] .faq-question {
-      text-align: right;
+      border-color: var(--primary);
     }
 
     /* Updated Logo styles */
@@ -125,6 +137,7 @@
     .logo-container img {
       width: 300px;
       height: auto;
+      pointer-events: none;
     }
 
     /* Adjust content padding to account for logo */
@@ -132,9 +145,17 @@
       padding-top: 0 !important;
     }
 
-    /* Adjust language switcher position for larger logo */
-    .language-switcher {
-      top: 40px;
+    /* Remove anchor styles */
+    .content a {
+      text-decoration: none !important;
+      color: var(--primary) !important;
+      cursor: default;
+    }
+
+    .content h1 {
+      color: var(--primary) !important;
+      cursor: default;
+      pointer-events: none;
     }
   </style>
 </head>
@@ -155,20 +176,24 @@
       plugins: [
         function(hook) {
           hook.beforeEach(function(content) {
-            // Only add language switcher
+            // Remove any existing language toggle button
+            const existingButton = document.querySelector('.language-toggle');
+            if (existingButton) {
+              existingButton.remove();
+            }
+
             const currentLang = localStorage.getItem('language') || 'en';
-            const languageSwitcher = `
-              <select 
-                class="language-switcher" 
-                onchange="switchLanguage(this.value)"
-                aria-label="Select language"
+            const buttonText = currentLang === 'en' ? 'عربي' : 'English';
+            const languageToggle = `
+              <button 
+                class="language-toggle" 
+                onclick="switchLanguage('${currentLang === 'en' ? 'ar' : 'en'}')"
               >
-                <option value="en" ${currentLang === 'en' ? 'selected' : ''}>English</option>
-                <option value="ar" ${currentLang === 'ar' ? 'selected' : ''}>عربي</option>
-              </select>
+                ${buttonText}
+              </button>
             `;
             
-            document.querySelector('body').insertAdjacentHTML('afterbegin', languageSwitcher);
+            document.querySelector('body').insertAdjacentHTML('afterbegin', languageToggle);
             return content;
           });
 
@@ -204,12 +229,13 @@
     function updateLanguageDisplay() {
       const currentLang = localStorage.getItem('language') || 'en';
       document.documentElement.lang = currentLang;
-      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
       
+      // Hide all language content
       document.querySelectorAll('.content-en, .content-ar').forEach(el => {
         el.style.display = 'none';
       });
       
+      // Show current language content
       const contentToShow = document.querySelector(`.content-${currentLang}`);
       if (contentToShow) {
         contentToShow.style.display = 'block';
@@ -219,6 +245,13 @@
     function switchLanguage(lang) {
       localStorage.setItem('language', lang);
       updateLanguageDisplay();
+      
+      // Update button text and onclick after switching
+      const langButton = document.querySelector('.language-toggle');
+      if (langButton) {
+        langButton.textContent = lang === 'en' ? 'عربي' : 'English';
+        langButton.onclick = () => switchLanguage(lang === 'en' ? 'ar' : 'en');
+      }
     }
   </script>
 
@@ -226,7 +259,6 @@
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
 
   <!-- Recommended -->
-  <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
 
 </body>
