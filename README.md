@@ -1,5 +1,7 @@
+<link rel="stylesheet" href="styles.css">
+
 <div class="logo-container">
-  <img src="SmartParkLogoWritingNew.svg" alt="SmartPark Logo">
+  <img src="Parkit-ae-full-logo.svg" alt="Parkit.ae Logo">
 </div>
 
 <!-- English Content -->
@@ -69,94 +71,8 @@
 
 </div>
 
-<style>
-  .faq-container {
-    background-color: white;
-    border: 1px solid var(--primary-light);
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-
-  .faq-item {
-    border: 1px solid var(--primary-light);
-    border-radius: 8px;
-    margin-bottom: 10px;
-    overflow: hidden;
-  }
-
-  .faq-question {
-    background-color: white;
-    color: var(--primary);
-    font-weight: 500;
-    width: 100%;
-    text-align: left;
-    padding: 15px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .faq-question:hover {
-    background-color: var(--primary-lighter);
-  }
-
-  .faq-question::after {
-    content: '▼';
-    font-size: 0.8em;
-    transition: transform 0.2s ease;
-  }
-
-  .faq-item.active .faq-question::after {
-    transform: rotate(180deg);
-  }
-
-  .faq-answer {
-    display: none;
-    padding: 15px;
-    border-top: 1px solid var(--primary-light);
-    background-color: white;
-    color: var(--primary-hover);
-  }
-
-  .faq-item.active .faq-answer {
-    display: block;
-  }
-
-  .faq-answer ul, .faq-answer ol {
-    margin-left: 20px;
-    margin-top: 10px;
-  }
-
-  .faq-answer li {
-    margin-bottom: 5px;
-  }
-</style>
-
-<script>
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const faqItem = button.parentElement;
-      const wasActive = faqItem.classList.contains('active');
-      
-      // Close all FAQ items
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
-      });
-      
-      // If the clicked item wasn't active, open it
-      if (!wasActive) {
-        faqItem.classList.add('active');
-      }
-    });
-  });
-</script>
-
 <div class="bottom-link">Discover the future of urban parking at <a href="https://parkit-ae.vercel.app" target="_blank" rel="noopener noreferrer">parkit-ae.vercel.app</a></div>
+</div>
 
 </div>
 
@@ -227,93 +143,9 @@
 
 </div>
 
-<style>
-  .faq-container {
-    background-color: white;
-    border: 1px solid var(--primary-light);
-    border-radius: 8px;
-    padding: 20px;
-    margin-top: 20px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-
-  .faq-item {
-    border: 1px solid var(--primary-light);
-    border-radius: 8px;
-    margin-bottom: 10px;
-    overflow: hidden;
-  }
-
-  .faq-question {
-    background-color: white;
-    color: var(--primary);
-    font-weight: 500;
-    width: 100%;
-    text-align: left;
-    padding: 15px;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .faq-question:hover {
-    background-color: var(--primary-lighter);
-  }
-
-  .faq-question::after {
-    content: '▼';
-    font-size: 0.8em;
-    transition: transform 0.2s ease;
-  }
-
-  .faq-item.active .faq-question::after {
-    transform: rotate(180deg);
-  }
-
-  .faq-answer {
-    display: none;
-    padding: 15px;
-    border-top: 1px solid var(--primary-light);
-    background-color: white;
-    color: var(--primary-hover);
-  }
-
-  .faq-item.active .faq-answer {
-    display: block;
-  }
-
-  .faq-answer ul, .faq-answer ol {
-    margin-left: 20px;
-    margin-top: 10px;
-  }
-
-  .faq-answer li {
-    margin-bottom: 5px;
-  }
-</style>
-
-<script>
-  document.querySelectorAll('.faq-question').forEach(button => {
-    button.addEventListener('click', () => {
-      const faqItem = button.parentElement;
-      const wasActive = faqItem.classList.contains('active');
-      
-      // Close all FAQ items
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
-      });
-      
-      // If the clicked item wasn't active, open it
-      if (!wasActive) {
-        faqItem.classList.add('active');
-      }
-    });
-  });
-</script>
-
-<div class="bottom-link">لمزيد من المعلومات، قم بزيارة <a href="https://parkit-ae.vercel.app">parkit-ae.vercel.app</a></div>
+<div class="bottom-link">اكتشف مستقبل مواقف السيارات في المدن على <a href="https://parkit-ae.vercel.app" target="_blank" rel="noopener noreferrer">parkit-ae.vercel.app</a></div>
+</div>
 
 </div>
+
+<script src="script.js"></script>
