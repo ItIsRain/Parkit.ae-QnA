@@ -1,3 +1,7 @@
+<div class="logo-container">
+  <img src="SmartParkLogoWritingNew.svg" alt="SmartPark Logo">
+</div>
+
 <!-- English Content -->
 <div class="content-en">
 
