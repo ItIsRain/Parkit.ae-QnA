@@ -75,13 +75,41 @@
 
     /* Language switcher styling */
     .language-switcher {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+      padding: 8px 12px;
+      border-radius: 8px;
       background-color: white;
       border: 1px solid var(--primary-light);
       color: var(--primary);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
 
     .language-switcher:hover {
       border-color: var(--primary);
+      background-color: var(--primary-lighter);
+    }
+
+    [lang="ar"] .language-switcher {
+      left: 10px;
+      right: auto;
+    }
+
+    /* Add smooth transitions */
+    .language-switcher {
+      transition: all 0.2s ease;
+    }
+
+    /* Adjust language switcher on mobile */
+    @media screen and (max-width: 768px) {
+      .language-switcher {
+        top: 5px;
+        padding: 6px 10px;
+      }
     }
 
     /* Content container */
@@ -130,23 +158,12 @@
       color: white;
     }
 
-    /* Add smooth transitions */
-    .sidebar ul li a,
-    .markdown-section a,
-    .language-switcher {
-      transition: all 0.2s ease;
-    }
-
-    .language-switcher {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      z-index: 1000;
-      padding: 5px;
-    }
-    [lang="ar"] .language-switcher {
-      left: 10px;
-      right: auto;
+    /* FAQ Title styling */
+    .faq-container h1 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
     }
 
     /* New scroll/overflow styles */
@@ -185,6 +202,26 @@
         padding-top: 50px;
       }
     }
+
+    /* Language content styles */
+    .content-en, .content-ar {
+      display: none;
+    }
+
+    /* RTL specific styles */
+    [dir="rtl"] .language-switcher {
+      left: 10px;
+      right: auto;
+    }
+
+    [dir="rtl"] .faq-question {
+      text-align: right;
+    }
+
+    [dir="rtl"] .faq-question::after {
+      margin-right: auto;
+      margin-left: 0;
+    }
   </style>
 </head>
 
@@ -220,13 +257,14 @@
       },
       plugins: [
         function(hook) {
-          const languages = ['en', 'ar'];
-          const currentLang = localStorage.getItem('language') || 'en';
-          
           hook.beforeEach(function(content) {
-            // Add language switcher
+            const currentLang = localStorage.getItem('language') || 'en';
             const html = `
-              <select class="language-switcher" onchange="switchLanguage(this.value)">
+              <select 
+                class="language-switcher" 
+                onchange="switchLanguage(this.value)"
+                aria-label="Select language"
+              >
                 <option value="en" ${currentLang === 'en' ? 'selected' : ''}>English</option>
                 <option value="ar" ${currentLang === 'ar' ? 'selected' : ''}>عربي</option>
               </select>
@@ -236,38 +274,38 @@
           });
 
           hook.doneEach(function() {
-            // Restore scroll position
-            if (sessionStorage.scrollPosition) {
-              document.documentElement.scrollTop = sessionStorage.scrollPosition;
-              sessionStorage.removeItem('scrollPosition');
-            }
-
-            // Initialize FAQ functionality after each page load
+            // Initialize FAQ functionality
             initializeFAQ();
-          });
-
-          // Save scroll position before page change
-          hook.beforeEach(function() {
-            sessionStorage.scrollPosition = document.documentElement.scrollTop;
+            
+            // Show content for current language
+            updateLanguageDisplay();
           });
         }
       ]
     };
 
+    // Update language display function
+    function updateLanguageDisplay() {
+      const currentLang = localStorage.getItem('language') || 'en';
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      
+      // Hide all language content
+      document.querySelectorAll('.content-en, .content-ar').forEach(el => {
+        el.style.display = 'none';
+      });
+      
+      // Show current language content
+      const contentToShow = document.querySelector(`.content-${currentLang}`);
+      if (contentToShow) {
+        contentToShow.style.display = 'block';
+      }
+    }
+
     // Update language switcher function
     function switchLanguage(lang) {
       localStorage.setItem('language', lang);
-      const currentPath = window.location.hash.split('?')[0];
-      if (lang === 'ar') {
-        document.documentElement.lang = 'ar';
-        document.documentElement.dir = 'rtl';
-        window.location.hash = currentPath.startsWith('#/ar/') ? currentPath : currentPath.replace('#/', '#/ar/');
-      } else {
-        document.documentElement.lang = 'en';
-        document.documentElement.dir = 'ltr';
-        window.location.hash = currentPath.replace('#/ar/', '#/');
-      }
-      window.location.reload();
+      updateLanguageDisplay();
     }
 
     // Separate function to initialize FAQ
@@ -385,13 +423,41 @@
 
     /* Language switcher styling */
     .language-switcher {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      z-index: 1000;
+      padding: 8px 12px;
+      border-radius: 8px;
       background-color: white;
       border: 1px solid var(--primary-light);
       color: var(--primary);
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
     }
 
     .language-switcher:hover {
       border-color: var(--primary);
+      background-color: var(--primary-lighter);
+    }
+
+    [lang="ar"] .language-switcher {
+      left: 10px;
+      right: auto;
+    }
+
+    /* Add smooth transitions */
+    .language-switcher {
+      transition: all 0.2s ease;
+    }
+
+    /* Adjust language switcher on mobile */
+    @media screen and (max-width: 768px) {
+      .language-switcher {
+        top: 5px;
+        padding: 6px 10px;
+      }
     }
 
     /* Content container */
@@ -440,23 +506,12 @@
       color: white;
     }
 
-    /* Add smooth transitions */
-    .sidebar ul li a,
-    .markdown-section a,
-    .language-switcher {
-      transition: all 0.2s ease;
-    }
-
-    .language-switcher {
-      position: fixed;
-      top: 10px;
-      right: 10px;
-      z-index: 1000;
-      padding: 5px;
-    }
-    [lang="ar"] .language-switcher {
-      left: 10px;
-      right: auto;
+    /* FAQ Title styling */
+    .faq-container h1 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
     }
 
     /* New scroll/overflow styles */
@@ -495,6 +550,26 @@
         padding-top: 50px;
       }
     }
+
+    /* Language content styles */
+    .content-en, .content-ar {
+      display: none;
+    }
+
+    /* RTL specific styles */
+    [dir="rtl"] .language-switcher {
+      left: 10px;
+      right: auto;
+    }
+
+    [dir="rtl"] .faq-question {
+      text-align: right;
+    }
+
+    [dir="rtl"] .faq-question::after {
+      margin-right: auto;
+      margin-left: 0;
+    }
   </style>
 </head>
 
@@ -530,13 +605,14 @@
       },
       plugins: [
         function(hook) {
-          const languages = ['en', 'ar'];
-          const currentLang = localStorage.getItem('language') || 'en';
-          
           hook.beforeEach(function(content) {
-            // Add language switcher
+            const currentLang = localStorage.getItem('language') || 'en';
             const html = `
-              <select class="language-switcher" onchange="switchLanguage(this.value)">
+              <select 
+                class="language-switcher" 
+                onchange="switchLanguage(this.value)"
+                aria-label="Select language"
+              >
                 <option value="en" ${currentLang === 'en' ? 'selected' : ''}>English</option>
                 <option value="ar" ${currentLang === 'ar' ? 'selected' : ''}>عربي</option>
               </select>
@@ -546,38 +622,38 @@
           });
 
           hook.doneEach(function() {
-            // Restore scroll position
-            if (sessionStorage.scrollPosition) {
-              document.documentElement.scrollTop = sessionStorage.scrollPosition;
-              sessionStorage.removeItem('scrollPosition');
-            }
-
-            // Initialize FAQ functionality after each page load
+            // Initialize FAQ functionality
             initializeFAQ();
-          });
-
-          // Save scroll position before page change
-          hook.beforeEach(function() {
-            sessionStorage.scrollPosition = document.documentElement.scrollTop;
+            
+            // Show content for current language
+            updateLanguageDisplay();
           });
         }
       ]
     };
 
+    // Update language display function
+    function updateLanguageDisplay() {
+      const currentLang = localStorage.getItem('language') || 'en';
+      document.documentElement.lang = currentLang;
+      document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+      
+      // Hide all language content
+      document.querySelectorAll('.content-en, .content-ar').forEach(el => {
+        el.style.display = 'none';
+      });
+      
+      // Show current language content
+      const contentToShow = document.querySelector(`.content-${currentLang}`);
+      if (contentToShow) {
+        contentToShow.style.display = 'block';
+      }
+    }
+
     // Update language switcher function
     function switchLanguage(lang) {
       localStorage.setItem('language', lang);
-      const currentPath = window.location.hash.split('?')[0];
-      if (lang === 'ar') {
-        document.documentElement.lang = 'ar';
-        document.documentElement.dir = 'rtl';
-        window.location.hash = currentPath.startsWith('#/ar/') ? currentPath : currentPath.replace('#/', '#/ar/');
-      } else {
-        document.documentElement.lang = 'en';
-        document.documentElement.dir = 'ltr';
-        window.location.hash = currentPath.replace('#/ar/', '#/');
-      }
-      window.location.reload();
+      updateLanguageDisplay();
     }
 
     // Separate function to initialize FAQ

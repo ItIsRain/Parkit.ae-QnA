@@ -1,2 +1,0 @@
-- [Home](README.md)
-- [Second Page](second-page.md)
