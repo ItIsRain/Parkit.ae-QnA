@@ -216,9 +216,35 @@
       margin-right: 0;
     }
 
-    /* Add this new rule to allow pointer cursor for contact links */
+    /* Make link styles more specific and consistent */
     .faq-answer a {
       cursor: pointer !important;  /* Force pointer cursor for FAQ answer links */
+    }
+
+    /* Make FAQ answer links match the bottom link style */
+    .faq-answer a {
+      cursor: pointer !important;
+      color: var(--primary) !important;
+      text-decoration: none !important;
+      transition: color 0.2s ease;
+    }
+
+    .faq-answer a:hover {
+      color: var(--primary-hover) !important;
+      text-decoration: underline !important;
+    }
+
+    /* Bottom link styles (your existing reference style) */
+    .bottom-link a {
+      color: var(--primary) !important;
+      text-decoration: none !important;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .bottom-link a:hover {
+      color: var(--primary-hover) !important;
+      text-decoration: underline !important;
     }
     
   </style>
