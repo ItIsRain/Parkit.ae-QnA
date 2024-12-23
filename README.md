@@ -84,7 +84,7 @@
 <div class="faq-item">
   <button class="faq-question">How can I get in touch with the Parkit.ae team?</button>
   <div class="faq-answer">
-    <p>We welcome inquiries from potential investors, partners, and stakeholders interested in Parkit.ae. Our dedicated team is ready to discuss opportunities for collaboration and provide detailed information about our solution. You can reach our team at:</p>
+    <p>We welcome inquiries from potential investors and partners interested in Parkit.ae. Our team is eager to explore collaboration opportunities and share insights about our solution. You can reach our team at:</p>
     <ul>
       <li>
         <strong>Name:</strong> Mohamed Al Mehairbi<br>
@@ -199,7 +199,7 @@
 <div class="faq-item">
   <button class="faq-question">كيف يمكنني التواصل مع فريق Parkit.ae؟</button>
   <div class="faq-answer">
-    <p>نرحب باستفسارات المستثمرين المحتملين والشركاء وأصحاب المصلحة المهتمين بـ Parkit.ae. فريقنا المتخصص مستعد لمناقشة فرص التعاون وتقديم معلومات مفصلة عن حلولنا. يمكنكم التواصل مع فريقنا عبر:</p>
+    <p>نرحب بالاستفسارات من المستثمرين والشركاء المهتمين بـ Parkit.ae. فريقنا مستعد لاستكشاف فرص التعاون ومشاركة الرؤى حول حلولنا. يمكنكم التواصل معنا عبر:</p>
     <ul>
       <li>
         <strong>الاسم:</strong> محمد المحيربي<br>
