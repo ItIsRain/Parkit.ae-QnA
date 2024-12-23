@@ -148,13 +148,6 @@
       padding-top: 0 !important;
     }
 
-    /* Remove anchor styles */
-    .content a {
-      text-decoration: none !important;
-      color: var(--primary) !important;
-      cursor: default;
-    }
-
     .content h1 {
       color: var(--primary) !important;
       cursor: default;
@@ -222,6 +215,12 @@
       margin-left: auto;
       margin-right: 0;
     }
+
+    /* Add this new rule to allow pointer cursor for contact links */
+    .faq-answer a {
+      cursor: pointer !important;  /* Force pointer cursor for FAQ answer links */
+    }
+    
   </style>
 </head>
 
