@@ -163,4 +163,16 @@
 .bottom-link a:hover {
   color: var(--primary-hover) !important;
   text-decoration: underline !important;
+}
+
+.faq-answer a {
+  cursor: pointer;
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.faq-answer a:hover {
+  color: var(--primary-hover);
+  text-decoration: underline;
 } 

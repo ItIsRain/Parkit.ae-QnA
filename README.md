@@ -81,6 +81,37 @@
   </div>
 </div>
 
+<div class="faq-item">
+  <button class="faq-question">How can I get in touch with the Parkit.ae team?</button>
+  <div class="faq-answer">
+    <p>We welcome inquiries from potential investors, partners, and stakeholders interested in Parkit.ae. Our dedicated team is ready to discuss opportunities for collaboration and provide detailed information about our solution. You can reach our team at:</p>
+    <ul>
+      <li>
+        <strong>Name:</strong> Mohamed Al Mehairbi<br>
+        <strong>Email:</strong> <a href="mailto:100063389@ku.ac.ae">100063389@ku.ac.ae</a><br>
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/malmehairbi/"target="_blank">Mohamed</a>
+      </li>
+      <li>
+        <strong>Name:</strong> Mahmoud Abdelsalam<br>
+        <strong>Email:</strong> <a href="mailto:Mahmoud-H-A@hotmail.com">Mahmoud-H-A@hotmail.com</a><br>
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/madelsa"
+        target="_blank">Mahmoud</a>
+      </li>
+      <li>
+        <strong>Name:</strong> Ali Saeed<br>
+        <strong>Email:</strong> <a href="mailto:alsaeed@student.42abudhabi.ae">alsaeed@student.42abudhabi.ae</a><br>
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/alisaeed3/"
+        target="_blank">Ali</a>
+      </li>
+      <li>
+        <strong>Name:</strong> Abdullah Ali Salem<br>
+        <strong>Email:</strong> <a href="mailto:absalem@student.42abudhabi.ae">absalem@student.42abudhabi.ae</a><br>
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/abdullah-salem-tech/" target="_blank">Abdullah</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
 </div>
 
 <div class="bottom-link">Discover the future of urban parking at <a href="https://parkit-ae.vercel.app" target="_blank" rel="noopener noreferrer">parkit-ae.vercel.app</a></div>
@@ -162,6 +193,35 @@
   <button class="faq-question">ما هي الخطوات اللازمة لطرح Parkit.ae في السوق؟</button>
   <div class="faq-answer">
     <p>لطرح Parkit.ae في السوق، سنبدأ باختبار تجريبي في منطقة مواقف دائرة التمكين الحكومي (DGE). سيستخدم موظفو DGE النظام لتقديم ملاحظات قيمة. بناءً على هذه البيانات، سنقوم بتحسين النظام وإجراء التعديلات اللازمة. بمجرد نجاح التجربة، سيتم توسيع نطاق Parkit.ae للتنفيذ على نطاق أوسع في جميع أنحاء أبوظبي وما بعدها.</p>
+  </div>
+</div>
+
+<div class="faq-item">
+  <button class="faq-question">كيف يمكنني التواصل مع فريق Parkit.ae؟</button>
+  <div class="faq-answer">
+    <p>نرحب باستفسارات المستثمرين المحتملين والشركاء وأصحاب المصلحة المهتمين بـ Parkit.ae. فريقنا المتخصص مستعد لمناقشة فرص التعاون وتقديم معلومات مفصلة عن حلولنا. يمكنكم التواصل مع فريقنا عبر:</p>
+    <ul>
+      <li>
+        <strong>الاسم:</strong> محمد المحيربي<br>
+        <strong>البريد الإلكتروني:</strong> <a href="mailto:100063389@ku.ac.ae">100063389@ku.ac.ae</a><br>
+        <strong>لينكد إن:</strong> <a href="https://www.linkedin.com/in/malmehairbi/" target="_blank">Mohamed</a>
+      </li>
+      <li>
+        <strong>الاسم:</strong> محمود عبدالسلام<br>
+        <strong>البريد الإلكتروني:</strong> <a href="mailto:Mahmoud-H-A@hotmail.com">Mahmoud-H-A@hotmail.com</a><br>
+        <strong>لينكد إن:</strong> <a href="https://www.linkedin.com/in/madelsa" target="_blank">Mahmoud</a>
+      </li>
+      <li>
+        <strong>الاسم:</strong> علي سعيد<br>
+        <strong>البريد الإلكتروني:</strong> <a href="mailto:alsaeed@student.42abudhabi.ae">alsaeed@student.42abudhabi.ae</a><br>
+        <strong>لينكد إن:</strong> <a href="https://www.linkedin.com/in/alisaeed3/" target="_blank">Ali</a>
+      </li>
+      <li>
+        <strong>الاسم:</strong> عبدالله علي سالم<br>
+        <strong>البريد الإلكتروني:</strong> <a href="mailto:absalem@student.42abudhabi.ae">absalem@student.42abudhabi.ae</a><br>
+        <strong>لينكد إن:</strong> <a href="https://www.linkedin.com/in/abdullah-salem-tech/" target="_blank">Abdullah</a>
+      </li>
+    </ul>
   </div>
 </div>
 
